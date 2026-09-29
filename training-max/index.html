@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#101214">
+<title>Training Max · 5 séances</title>
+<style>
+:root{--bg:#0d0f10;--card:#171a1d;--line:#292e33;--text:#f4f5f5;--muted:#9ba3aa;--accent:#d9ff52;--blue:#8ad8ff}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Arial,sans-serif;padding-bottom:100px}
+header{padding:calc(26px + env(safe-area-inset-top)) 18px 18px;max-width:760px;margin:auto}
+.kicker{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.12em} h1{font-size:34px;line-height:1.02;margin:8px 0 10px} header p{color:var(--muted);line-height:1.45;margin:0}
+nav{position:sticky;top:0;z-index:9;background:rgb(13 15 16 / .92);backdrop-filter:blur(16px);padding:10px 14px;overflow:auto;white-space:nowrap;border-bottom:1px solid var(--line)}
+nav a{display:inline-block;text-decoration:none;color:var(--text);background:var(--card);padding:9px 12px;border-radius:999px;margin-right:6px;font-size:13px}
+main{max-width:760px;margin:auto;padding:10px 14px} .session{scroll-margin-top:64px;margin:18px 0 32px}
+.sessionHead{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin:0 4px 12px} small{color:var(--accent);font-weight:800} h2{font-size:24px;margin:3px 0} .sessionHead p{margin:0;color:var(--muted)}
+.reset{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:10px;padding:8px;font-size:11px}
+.warm,.cardio{background:#20251d;border:1px solid #354128;border-radius:16px;padding:14px;margin-bottom:10px;line-height:1.45;font-size:14px} .cardio{background:#151e23;border-color:#253b46;margin-top:10px}
+.exercise{display:flex;background:var(--card);border:1px solid var(--line);border-radius:17px;padding:13px;margin:9px 0;gap:11px}
+.check input{display:none} .check span{display:block;width:27px;height:27px;border:2px solid #525a61;border-radius:9px;margin-top:2px} .check input:checked+span{background:var(--accent);border-color:var(--accent);box-shadow:inset 0 0 0 6px var(--card)}
+.exbody{min-width:0;flex:1} .exname{font-weight:750;font-size:17px;line-height:1.25} .chips{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.chips>*{font-size:11px;background:#22272b;color:#bfc5ca;border-radius:999px;padding:5px 7px} .chips b{color:#101214;background:var(--accent)}
+.track{display:grid;grid-template-columns:1fr 1fr;gap:7px} input,textarea{font:inherit;color:var(--text);background:#0f1113;border:1px solid #30363b;border-radius:10px;padding:10px;min-width:0}
+.track a{grid-column:1/-1;text-align:center;text-decoration:none;color:#071016;background:var(--blue);border-radius:10px;padding:10px;font-size:13px;font-weight:750}
+textarea{width:100%;height:88px;margin-top:10px;resize:vertical} footer{max-width:760px;margin:auto;padding:0 18px;color:var(--muted);font-size:13px;line-height:1.5}
+.rules{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:8px 0 25px} .rules h3{margin:0 0 8px;color:var(--accent)} .rules p{margin:7px 0}
+.progress{height:6px;background:#24282c;position:fixed;bottom:0;left:0;right:0;z-index:10} #bar{height:100%;width:0;background:var(--accent);transition:.25s}
+</style></head>
+<body>
+<header><div class="kicker">MAX · TRAINING V2</div><h1>5 séances.<br>Simple. Progressif. Solide.</h1>
+<p>Musculation ~60 min + cardio. Les cases, charges, reps et notes sont sauvegardées automatiquement sur cet iPhone.</p></header>
+<nav><a href="#s0">J1 · Pecs + Triceps</a><a href="#s1">J2 · Jambes</a><a href="#s2">J3 · Dos + Biceps</a><a href="#s3">J4 · Épaules + Abdos</a><a href="#s4">J5 · Full Body</a><a href="#regles">Règles</a></nav>
+<main>
+<div class="rules" id="regles"><h3>Comment l'utiliser</h3>
+<p><b>RIR 2</b> = tu termines la série avec environ 2 répétitions propres encore possibles.</p>
+<p><b>Progression :</b> reste dans la plage de reps. Quand toutes les séries atteignent le haut de la plage avec le RIR demandé, augmente légèrement la charge la fois suivante.</p>
+<p><b>Tempo 3–1–1 :</b> 3 s de descente, 1 s de contrôle, 1 s pour pousser/tirer. Pas besoin de chronométrer au dixième : l'objectif est le contrôle.</p>
+<p><b>Deload :</b> si fatigue/performance se dégradent plusieurs séances de suite, fais 1 semaine à ~60–70 % du volume habituel.</p></div>
+
+    <section class="session" id="s0">
+      <div class="sessionHead"><div><small>SÉANCE 1</small><h2>J1 · Pecs + Triceps</h2><p>Force contrôlée + hypertrophie</p></div><button class="reset" onclick="resetSession(0)">Réinitialiser</button></div>
+      <div class="warm"><b>Échauffement · 8–10 min</b><br>5 min cardio léger + mobilité ciblée + 2–3 séries de montée en charge sur le premier mouvement.</div>
+      
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-0"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Développé couché barre / Smith</div>
+            <div class="chips"><b>4 × 8–10</b><span>Repos 2 min</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-0">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-0">
+              <a href="https://www.youtube.com/watch?v=vi19vWy-ufc&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=2" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-1"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Développé incliné barre / Smith</div>
+            <div class="chips"><b>3 × 8–10</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-1">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-1">
+              <a href="https://www.youtube.com/watch?v=jgGhKCcoESk&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=1" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-2"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Écarté incliné haltères</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min 15</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-2">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-2">
+              <a href="https://youtu.be/xPoPZsgP0PQ" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-3"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Écarté poulie haute</div>
+            <div class="chips"><b>3 × 12–15</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-3">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-3">
+              <a href="https://www.youtube.com/watch?v=ZvZFWJIYdXk&list=PLs7V_HcZnF7bX15_o15LQHrjHOzu6Glvl&index=1" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-4"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Extension triceps poulie</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-4">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-4">
+              <a href="https://www.youtube.com/watch?v=-o6G5-ajC_Q&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=16" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-0-5"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Extension triceps au-dessus de la tête</div>
+            <div class="chips"><b>3 × 12–15</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-0-5">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-0-5">
+              <a href="https://youtu.be/3PJ4D7MlA10" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+      <div class="cardio"><b>❤️ Cardio</b><br>45–60 min · Zone 2 · tapis incliné / vélo / elliptique</div>
+      <textarea data-key="n-0" placeholder="Notes de séance : sensations, douleurs, progression, charge à viser la prochaine fois…"></textarea>
+    </section>
+    <section class="session" id="s1">
+      <div class="sessionHead"><div><small>SÉANCE 2</small><h2>J2 · Jambes</h2><p>Quadriceps + ischios + fessiers + mollets</p></div><button class="reset" onclick="resetSession(1)">Réinitialiser</button></div>
+      <div class="warm"><b>Échauffement · 8–10 min</b><br>5 min cardio léger + mobilité ciblée + 2–3 séries de montée en charge sur le premier mouvement.</div>
+      
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-0"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Squat libre / Smith</div>
+            <div class="chips"><b>4 × 8</b><span>Repos 2 min</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-0">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-0">
+              <a href="https://www.youtube.com/watch?v=in5vlmKnAg8&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=8" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-1"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Presse à cuisses</div>
+            <div class="chips"><b>4 × 10–12</b><span>Repos 2 min</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-1">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-1">
+              <a href="https://www.youtube.com/watch?v=TUBXwbyRS2A&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=10" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-2"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Leg extension</div>
+            <div class="chips"><b>3 × 12–15</b><span>Repos 1 min 15</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-2">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-2">
+              <a href="https://www.youtube.com/watch?v=LK8bHNgyZ_w&list=PLs7V_HcZnF7bX15_o15LQHrjHOzu6Glvl&index=7" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-3"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Leg curl</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min 15</span><span>RIR 1–2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-3">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-3">
+              <a href="https://www.youtube.com/watch?v=p1MJm3JaJfE&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=9" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-4"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Fentes marchées</div>
+            <div class="chips"><b>3 × 10 / jambe</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 2–0–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-4">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-4">
+              <a href="https://www.youtube.com/watch?v=0wqQpf8t1-c&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=11" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-1-5"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Mollets</div>
+            <div class="chips"><b>4 × 15–20</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-1-5">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-1-5">
+              <a href="https://youtu.be/AQRYhDi8e7g" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+      <div class="cardio"><b>❤️ Cardio</b><br>30–45 min · facile · vélo ou marche inclinée légère</div>
+      <textarea data-key="n-1" placeholder="Notes de séance : sensations, douleurs, progression, charge à viser la prochaine fois…"></textarea>
+    </section>
+    <section class="session" id="s2">
+      <div class="sessionHead"><div><small>SÉANCE 3</small><h2>J3 · Dos + Biceps</h2><p>Largeur + épaisseur + bras</p></div><button class="reset" onclick="resetSession(2)">Réinitialiser</button></div>
+      <div class="warm"><b>Échauffement · 8–10 min</b><br>5 min cardio léger + mobilité ciblée + 2–3 séries de montée en charge sur le premier mouvement.</div>
+      
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-0"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Tirage vertical prise large</div>
+            <div class="chips"><b>4 × 8–12</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-0">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-0">
+              <a href="https://www.youtube.com/watch?v=-pG5dt20f-4" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-1"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Rowing barre pronation</div>
+            <div class="chips"><b>4 × 8–10</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-1">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-1">
+              <a href="https://www.youtube.com/watch?v=m_7zm6TyzMw&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=4" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-2"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Tirage horizontal</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-2">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-2">
+              <a href="https://www.youtube.com/watch?v=ZXJTNxGe0Ow&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=5" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-3"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Rowing bûcheron unilatéral</div>
+            <div class="chips"><b>3 × 12 / bras</b><span>Repos 1 min 15</span><span>RIR 2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-3">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-3">
+              <a href="https://www.youtube.com/watch?v=MgJxmNpxSQk&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=19" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-4"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Curl haltères incliné</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-4">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-4">
+              <a href="https://youtu.be/qzMXTWf2zGA" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-2-5"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Curl marteau</div>
+            <div class="chips"><b>3 × 10–12</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-2-5">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-2-5">
+              <a href="https://youtu.be/RMhjoMuxd-U" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+      <div class="cardio"><b>❤️ Cardio</b><br>45–60 min · Zone 2</div>
+      <textarea data-key="n-2" placeholder="Notes de séance : sensations, douleurs, progression, charge à viser la prochaine fois…"></textarea>
+    </section>
+    <section class="session" id="s3">
+      <div class="sessionHead"><div><small>SÉANCE 4</small><h2>J4 · Épaules + Abdos</h2><p>Deltoïdes complets + sangle abdominale</p></div><button class="reset" onclick="resetSession(3)">Réinitialiser</button></div>
+      <div class="warm"><b>Échauffement · 8–10 min</b><br>5 min cardio léger + mobilité ciblée + 2–3 séries de montée en charge sur le premier mouvement.</div>
+      
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-0"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Développé militaire Smith assis</div>
+            <div class="chips"><b>4 × 8–10</b><span>Repos 1 min 30</span><span>RIR 2</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-0">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-0">
+              <a href="https://www.youtube.com/watch?v=Ory9bU_12M4&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=13" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-1"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Élévations latérales</div>
+            <div class="chips"><b>4 × 12–15</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-1">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-1">
+              <a href="https://www.youtube.com/watch?v=v1PUY3t5z2c&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=32" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-2"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Oiseau / deltoïdes postérieurs</div>
+            <div class="chips"><b>4 × 12–15</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-2">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-2">
+              <a href="https://youtu.be/si6pt0WejGk" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-3"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Face pull</div>
+            <div class="chips"><b>3 × 15–20</b><span>Repos 1 min</span><span>RIR 2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-3">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-3">
+              <a href="https://www.youtube.com/watch?v=304X2iVzw6I&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=26" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-4"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Crunch poulie / machine</div>
+            <div class="chips"><b>3 × 12–15</b><span>Repos 1 min</span><span>RIR 1–2</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-4">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-4">
+              <a href="https://www.youtube.com/watch?v=SzRxjpgsBI8&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=8" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-3-5"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Gainage</div>
+            <div class="chips"><b>3 × 45–60 sec</b><span>Repos 45 sec</span><span>RIR —</span><span>Tempo contrôlé</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-3-5">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-3-5">
+              <a href="https://www.youtube.com/watch?v=SzRxjpgsBI8&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=8" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+      <div class="cardio"><b>❤️ Cardio</b><br>45–60 min · Zone 2 · option 8 × 30/30 en fin si récupération OK</div>
+      <textarea data-key="n-3" placeholder="Notes de séance : sensations, douleurs, progression, charge à viser la prochaine fois…"></textarea>
+    </section>
+    <section class="session" id="s4">
+      <div class="sessionHead"><div><small>SÉANCE 5</small><h2>J5 · Full Body</h2><p>Rappel global · volume modéré · technique impeccable</p></div><button class="reset" onclick="resetSession(4)">Réinitialiser</button></div>
+      <div class="warm"><b>Échauffement · 8–10 min</b><br>5 min cardio léger + mobilité ciblée + 2–3 séries de montée en charge sur le premier mouvement.</div>
+      
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-0"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Presse à cuisses</div>
+            <div class="chips"><b>3 × 10</b><span>Repos 1 min 30</span><span>RIR 3</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-0">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-0">
+              <a href="https://www.youtube.com/watch?v=TUBXwbyRS2A&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=10" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-1"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Développé incliné</div>
+            <div class="chips"><b>3 × 10</b><span>Repos 1 min 30</span><span>RIR 3</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-1">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-1">
+              <a href="https://www.youtube.com/watch?v=jgGhKCcoESk&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=1" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-2"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Tirage vertical</div>
+            <div class="chips"><b>3 × 10</b><span>Repos 1 min 30</span><span>RIR 3</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-2">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-2">
+              <a href="https://www.youtube.com/watch?v=-pG5dt20f-4" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-3"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Tirage horizontal</div>
+            <div class="chips"><b>3 × 10</b><span>Repos 1 min 30</span><span>RIR 3</span><span>Tempo 2–1–2</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-3">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-3">
+              <a href="https://www.youtube.com/watch?v=ZXJTNxGe0Ow&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=5" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-4"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Développé militaire haltères</div>
+            <div class="chips"><b>3 × 10</b><span>Repos 1 min 30</span><span>RIR 3</span><span>Tempo 3–1–1</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-4">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-4">
+              <a href="https://www.youtube.com/watch?v=4mYYAaQCCVo&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=28" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <label class="check"><input type="checkbox" data-key="c-4-5"><span></span></label>
+          <div class="exbody">
+            <div class="exname">Curl + extension triceps</div>
+            <div class="chips"><b>2 × 12 + 12</b><span>Repos 1 min</span><span>RIR 2</span><span>Tempo contrôlé</span></div>
+            <div class="track">
+              <input inputmode="decimal" placeholder="Charge" data-key="w-4-5">
+              <input inputmode="numeric" placeholder="Reps" data-key="r-4-5">
+              <a href="https://www.youtube.com/watch?v=hKlOJsZNj-M&list=PLs7V_HcZnF7YTv_7i-NNhg2ni-o8cThOc&index=17" target="_blank" rel="noopener">▶ Vidéo Odyssée</a>
+            </div>
+          </div>
+        </div>
+      <div class="cardio"><b>❤️ Cardio</b><br>45–60 min · Zone 2</div>
+      <textarea data-key="n-4" placeholder="Notes de séance : sensations, douleurs, progression, charge à viser la prochaine fois…"></textarea>
+    </section>
+</main>
+<footer>Les boutons vidéo reprennent les liens intégrés dans le PDF <i>L'Odyssée de la Masse</i>. Cette fiche adapte les exercices à un cycle personnel de 5 séances ; elle ne reproduit pas le programme original. Arrête l'effort en cas de douleur inhabituelle, malaise ou symptôme neurologique/visuel et demande un avis médical.</footer>
+<div class="progress"><div id="bar"></div></div>
+<script>
+const els=[...document.querySelectorAll('[data-key]')];
+els.forEach(el=>{let v=localStorage.getItem(el.dataset.key);if(v!==null) el.type==='checkbox'?el.checked=v==='1':el.value=v;
+el.addEventListener(el.type==='checkbox'?'change':'input',()=>{localStorage.setItem(el.dataset.key,el.type==='checkbox'?(el.checked?'1':'0'):el.value);update();})})
+function update(){let c=[...document.querySelectorAll('input[type=checkbox]')],n=c.filter(x=>x.checked).length;document.getElementById('bar').style.width=(100*n/c.length)+'%'}
+function resetSession(i){if(!confirm('Réinitialiser les cases, charges, reps et notes de cette séance ?'))return;document.querySelectorAll('#s'+i+' [data-key]').forEach(el=>{localStorage.removeItem(el.dataset.key);el.type==='checkbox'?el.checked=false:el.value=''});update()}
+update();
+</script></body></html>
